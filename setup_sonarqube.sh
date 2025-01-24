@@ -29,5 +29,8 @@ sudo usermod -aG docker ubuntu
 # Adjust permissions for the Docker socket to avoid permission issues
 sudo chmod 777 /var/run/docker.sock
 
+# Restart Docker demon
+sudo systemctl restart docker
+
 # Pull and run the SonarQube container, exposing it on port 9000
-docker run -d --name sonarqube -p 9000:9000 sonarqube:latest
+docker run -d --name sonarqube -p 9000:9000 sonarqube:lts-community
